@@ -1,11 +1,15 @@
 import React from "react";
+import "./App.css";
+import styles from "./App.module.css";
 
-const App = () => {
+import ImageGallery from "./Components/ImageGallery/ImageGallery";
+
+function App() {
   return (
-    <div>
-      <h1>111</h1>
+    <div className="App">
+      <ImageGallery />
     </div>
   );
-};
+}
 
 export default App;
