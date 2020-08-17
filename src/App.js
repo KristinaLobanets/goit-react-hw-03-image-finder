@@ -1,11 +1,11 @@
 import React from "react";
 import "./App.css";
-import ImageGallery from "./Components/ImageGallery/ImageGallery";
+import Gallery from "./Components/Gallery/Gallery";
 
 function App() {
   return (
     <div className="App">
-      <ImageGallery />
+      <Gallery />
     </div>
   );
 }

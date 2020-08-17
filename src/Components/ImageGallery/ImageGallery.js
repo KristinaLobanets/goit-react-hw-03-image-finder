@@ -1,17 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 import styles from "./ImageGallery.module.css";
-import SearchBar from "../SearchBar/SearchBar";
 
-class ImageGallery extends Component {
-  state = {};
-  render() {
-    const {} = this.state;
-    return (
-      <>
-        <ul className={styles.ImageGallery}></ul>
-        <SearchBar />
-      </>
-    );
-  }
-}
+const ImageGallery = ({ children }) => {
+  return (
+    <>
+      <ul className={styles.ImageGallery}>{children}</ul>
+    </>
+  );
+};
+
 export default ImageGallery;

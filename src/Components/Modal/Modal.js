@@ -3,6 +3,14 @@ import styles from "./Modal.module.css";
 
 export default class Modal extends Component {
   render() {
-    return <> </>;
+    return (
+      <>
+        <div className="Overlay">
+          <div className="Modal">
+            <img src="" alt="" />
+          </div>
+        </div>
+      </>
+    );
   }
 }
