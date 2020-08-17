@@ -1,23 +1,17 @@
 import React, { Component } from "react";
 import styles from "./ImageGallery.module.css";
+import SearchBar from "../SearchBar/SearchBar";
 
 class ImageGallery extends Component {
   state = {};
-
   render() {
     const {} = this.state;
-    if (error) {
-      return <h1>Woops, something went wrong. Try again later!</h1>;
-    }
     return (
       <>
-        <Searchbar />
-        <ImageGalleryItem />
-        <Button />
-        <Modal />
+        <ul className={styles.ImageGallery}></ul>
+        <SearchBar />
       </>
     );
   }
 }
-
 export default ImageGallery;
