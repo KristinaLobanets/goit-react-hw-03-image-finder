@@ -4,9 +4,10 @@ import styles from "./Modal.module.css";
 class Modal extends Component {
   render() {
     return (
+      // <></>
       <div className={styles.Overlay} alt="">
         <div className={styles.Modal}>
-          <img src={largeImageURL} />
+          <img src={this.props.largeImageURL} />
         </div>
       </div>
     );

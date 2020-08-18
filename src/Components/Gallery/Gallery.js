@@ -5,12 +5,16 @@ import ImageGallery from "../ImageGallery/ImageGallery";
 import ImageGalleryItem from "../ImageGalleryItem/ImageGalleryItem";
 import fetchImagesWithQuery from "../../helpers/axios";
 import Button from "../Button/button";
+import Modal from "../Modal/Modal";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 class Gallery extends Component {
   state = {
     photos: [],
     searchQuery: "",
     page: 1,
+    showModal: false,
+    imageModal: "",
   };
 
   onSubmit = (query) => {
@@ -43,6 +47,15 @@ class Gallery extends Component {
       .catch((error) => this.setState({ error }));
   };
 
+  toggleModal = (largeImage) => {
+    this.setState((state) => ({
+      showModal: !state.showModal,
+      imageModal: largeImage,
+    }));
+  };
+
+  modalClose = () => {};
+
   render() {
     return (
       <>
@@ -50,7 +63,15 @@ class Gallery extends Component {
         <ImageGallery>
           <ImageGalleryItem array={this.state.photos} />
         </ImageGallery>
-        <Button onSomething={this.fetchImagesLoadMore} />
+
+        {!!this.state.photos.length > 0 && (
+          <Button onSomething={this.fetchImagesLoadMore} />
+        )}
+        <Modal
+          toggleModal={this.toggleModal}
+          imageModal={largeImageURL}
+          onClose={this.modalClose}
+        />
       </>
     );
   }
