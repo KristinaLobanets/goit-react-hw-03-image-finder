@@ -5,15 +5,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import Loader from "react-loader-spinner";
 class Loader extends Component {
   render() {
-    return (
-      <Loader
-        type="Puff"
-        color="#00BFFF"
-        height={100}
-        width={100}
-        timeout={3000} //3 secs
-      />
-    );
+    return <Loader type="Oval" color="#00BFFF" height={80} width={80} />;
   }
 }
 export default Loader;

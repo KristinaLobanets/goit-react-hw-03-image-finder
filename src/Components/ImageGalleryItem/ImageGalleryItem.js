@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./imageGalleryItem.module.css";
 
-const ImageGalleryItem = ({ array = [], toggleModalWin }) => {
+const ImageGalleryItem = ({ array = [], toggleModal }) => {
   return (
     <>
       {array.map((item) => (
         <li
           onClick={() => {
-            toggleModalWin(item.largeImageURL);
+            toggleModal(item.largeImageURL);
           }}
           key={item.id}
           className={styles.ImageGalleryItem}
