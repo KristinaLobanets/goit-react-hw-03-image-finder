@@ -4,6 +4,7 @@ import Searchbar from "../SearchBar/SearchBar";
 import ImageGallery from "../ImageGallery/ImageGallery";
 import ImageGalleryItem from "../ImageGalleryItem/ImageGalleryItem";
 import fetchImagesWithQuery from "../../helpers/axios";
+import Button from "../Button/button";
 
 class Gallery extends Component {
   state = {
@@ -31,6 +32,17 @@ class Gallery extends Component {
     }
   }
 
+  fetchImagesLoadMore = () => {
+    fetchImagesWithQuery(this.state.searchQuery, this.state.page)
+      .then((photos) =>
+        this.setState((prevState) => ({
+          photos: [...prevState.photos, ...photos],
+          page: prevState.page + 1,
+        }))
+      )
+      .catch((error) => this.setState({ error }));
+  };
+
   render() {
     return (
       <>
@@ -38,6 +50,7 @@ class Gallery extends Component {
         <ImageGallery>
           <ImageGalleryItem array={this.state.photos} />
         </ImageGallery>
+        <Button onSomething={this.fetchImagesLoadMore} />
       </>
     );
   }
