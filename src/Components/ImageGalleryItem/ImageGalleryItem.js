@@ -5,14 +5,17 @@ const ImageGalleryItem = ({ array = [], toggleModalWin }) => {
   return (
     <>
       {array.map((item) => (
-        <li key={item.id} className={styles.ImageGalleryItem}>
+        <li
+          onClick={() => {
+            toggleModalWin(item.largeImageURL);
+          }}
+          key={item.id}
+          className={styles.ImageGalleryItem}
+        >
           <img
             src={item.webformatURL}
             alt={item.webformatURL}
             className={styles.ImageGalleryItemimage}
-            onClick={() => {
-              toggleModalWin(item.largeImageURL);
-            }}
           />
         </li>
       ))}

@@ -69,7 +69,7 @@ class Gallery extends Component {
         )}
         <Modal
           toggleModal={this.toggleModal}
-          imageModal={largeImageURL}
+          imageModal={this.imageModal}
           onClose={this.modalClose}
         />
       </>
