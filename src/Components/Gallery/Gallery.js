@@ -7,7 +7,7 @@ import fetchImagesWithQuery from "../../helpers/axios";
 import Button from "../Button/button";
 import Modal from "../Modal/Modal";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import Loader from "react-loader-spinner";
+import Spinner from "../Loader/loader";
 
 class Gallery extends Component {
   state = {
@@ -67,7 +67,7 @@ class Gallery extends Component {
             toggleModal={this.toggleModal}
           />
         </ImageGallery>
-        {this.state.loader && <Loader />}
+        {this.state.loader && <Spinner />}
         {!!this.state.photos.length > 0 && (
           <Button onSomething={this.fetchImagesLoadMore} />
         )}

@@ -1,11 +1,17 @@
-import React, { Component } from "react";
-import styles from "./loader.module.css";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-
 import Loader from "react-loader-spinner";
-class Loader extends Component {
+import React, { Component } from "react";
+export default class Spinner extends Component {
+  //other logic
   render() {
-    return <Loader type="Oval" color="#00BFFF" height={80} width={80} />;
+    return (
+      <Loader
+        type="BallTriangle"
+        color="#00BFFF"
+        height={80}
+        width={80}
+        className="spinner"
+      />
+    );
   }
 }
-export default Loader;
