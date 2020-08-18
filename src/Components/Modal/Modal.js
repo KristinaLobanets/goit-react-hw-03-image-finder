@@ -7,7 +7,7 @@ class Modal extends Component {
       // <></>
       <div className={styles.Overlay} alt="">
         <div className={styles.Modal}>
-          <img src={this.props.largeImageURL} />
+          <img src={this.props.imageModal} />
         </div>
       </div>
     );

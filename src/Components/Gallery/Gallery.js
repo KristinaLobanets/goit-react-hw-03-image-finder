@@ -63,15 +63,17 @@ class Gallery extends Component {
         <ImageGallery>
           <ImageGalleryItem array={this.state.photos} />
         </ImageGallery>
-
         {!!this.state.photos.length > 0 && (
           <Button onSomething={this.fetchImagesLoadMore} />
         )}
-        <Modal
-          toggleModal={this.toggleModal}
-          imageModal={this.imageModal}
-          onClose={this.modalClose}
-        />
+
+        {this.state.showModal && (
+          <Modal
+            toggleModal={this.toggleModal}
+            imageModal={this.imageModal}
+            onClose={this.modalClose}
+          />
+        )}
       </>
     );
   }
