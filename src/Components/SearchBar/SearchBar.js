@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styles from "./SearchBar.module.css";
-import fetchImagesWithQuery from "../../helpers/axios";
 
 class Searchbar extends Component {
   state = {

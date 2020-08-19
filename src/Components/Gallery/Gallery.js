@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { render } from "@testing-library/react";
 import Searchbar from "../SearchBar/SearchBar";
 import ImageGallery from "../ImageGallery/ImageGallery";
 import ImageGalleryItem from "../ImageGalleryItem/ImageGalleryItem";
